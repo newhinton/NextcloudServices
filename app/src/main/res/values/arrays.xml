@@ -19,13 +19,13 @@
         <item>Contribution: Userinterface Overhaul</item>
     </string-array>
 
-    <string-array name="oss_libs_owner_Img">
-        <item>https://avatars.githubusercontent.com/u/15843766?v=4</item>
-        <item>https://avatars.githubusercontent.com/u/404166?v=4</item>
-        <item>https://avatars.githubusercontent.com/u/31142286?v=4</item>
-        <item>https://avatars.githubusercontent.com/u/6894017?v=4</item>
-        <item>https://avatars.githubusercontent.com/u/89275109?v=4</item>
-        <item>https://avatars.githubusercontent.com/u/25279821?v=4</item>
+    <string-array name="oss_libs_owner_id">
+        <item>15843766</item>
+        <item>404166</item>
+        <item>31142286</item>
+        <item>6894017</item>
+        <item>89275109</item>
+        <item>25279821</item>
     </string-array>
 
     <string-array name="oss_libs_owner_name">

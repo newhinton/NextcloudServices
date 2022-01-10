@@ -11,8 +11,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.annotation.GlideModule;
 import com.polar.nextcloudservices.R;
 import com.polar.nextcloudservices.ContributorDetails;
 
@@ -45,7 +43,12 @@ public class CreditsAdapter extends ArrayAdapter<ContributorDetails> {
         userName.setText(details.get(position).Name);
         contribution.setText(details.get(position).contribution);
         githubName.setText(details.get(position).github_name);
-        Glide.with(context).load(details.get(position).imageUrl).placeholder(R.drawable.user).circleCrop().into(UserImage);
+
+        int id = context.getResources().getIdentifier("img_"+details.get(position).imageUrl,
+                "raw", context.getPackageName());
+
+        UserImage.setClipToOutline(true);
+        UserImage.setImageResource(id);
         return convertView;
     }
 }

@@ -24,3 +24,19 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+task updateGithubProfileImages() {
+    def items = ["15843766", "404166", "31142286", "6894017", "89275109", "25279821"]
+    items.each { item ->
+        def url = 'https://avatars.githubusercontent.com/u/' + item + '?v=4'
+        try {
+            exec {
+                workingDir "app/src/main/res/raw/"
+                commandLine 'wget', url, "-q", "-O", "img_${item}.png"
+            }.exitValue
+        } catch (Exception e) {
+            println "Error Downloading Files. Did you install and add wget to your PATH?"
+        }
+
+    }
+}

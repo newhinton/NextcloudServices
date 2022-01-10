@@ -54,7 +54,7 @@ public class CreditsFragment extends Fragment {
         urls = getResources().getStringArray(R.array.oss_libs_links);
         owner_Name = getResources().getStringArray(R.array.oss_libs_owner_name);
         owner_github_Name = getResources().getStringArray(R.array.oss_libs_owner_github_name);
-        owner_github_image = getResources().getStringArray(R.array.oss_libs_owner_Img);
+        owner_github_image = getResources().getStringArray(R.array.oss_libs_owner_id);
 
         details_add();
 
@@ -62,12 +62,9 @@ public class CreditsFragment extends Fragment {
         ListView mListView = binding.ossLicensesList;
         CreditsAdapter aAdapter = new CreditsAdapter(this.getContext(), R.layout.credits_contributer, details);
         mListView.setAdapter(aAdapter);
-        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(urls[position]));
-                startActivity(browserIntent);
-            }
+        mListView.setOnItemClickListener((parent, view, position, id) -> {
+            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(urls[position]));
+            startActivity(browserIntent);
         });
 
         return root;
